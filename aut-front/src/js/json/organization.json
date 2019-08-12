@@ -1,0 +1,370 @@
+{
+	"businessFunctions" : [
+		{
+			"id" : "1",
+			"name" : "Loan Initiation",
+			"description" : "Initiation of the loan process from intake in Roosterfy through creation in SpeedFast",
+			"components" : [1, 2, 3, 4, 5],
+			"status" : "OK"
+		},
+		{
+			"id" : "2",
+			"name" : "Mortgage Underwriting",
+			"description" : "Underwriting processes including title search and insurance with outside providers",
+			"components" : [6, 7, 8, 9],
+			"status" : "OK"
+		},
+		{
+			"id" : "3",
+			"name" : "Credit Validation",
+			"description" : "Process of validating credit including client income verification with outside providers",
+			"components" : [10, 11],
+			"status" : "OK"
+		},
+		{
+			"id" : "4",
+			"name" : "Closing Process",
+			"description" : "Loan closing processincluding scheduling closing agent, customer and closing document management",
+			"components" : [12, 13, 14],
+			"status" : "OK"
+		}
+
+	],
+	"components" : [
+		{
+			"id" : 1,
+			"name" : "li_roosterfy_process_inbound",
+			"description" : "Accept loan initiation payload",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			],
+			"links" : [
+				"Github page",
+				"Another External Link",
+				"Sensu"
+			]
+		},
+		{
+			"id" : 2,
+			"name" : "li_docs_process_inbound",
+			"description" : "Accept loan initiation docs (1- N)",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			]
+		},
+		{
+			"id" : 3,
+			"name" : "salesforce_loanclient",
+			"description" : "Maintain client information in Salesforce",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			],
+			"links" : [
+				"Github page",
+				"Another External Link",
+				"Sensu"
+			]
+		},
+		{
+			"id" : 4,
+			"name" : "gemini_loanclient",
+			"description" : "Maintain client information in Gemini",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				},
+				{
+					"id" : "workers",
+					"name" : "Expected Workers: 1",
+					"value" : "Current Workers: 1",
+					"status" : "OK"
+				},
+				{
+					"id" : "db",
+					"name" : "ORI Prod Database Status",
+					"value" : "Up",
+					"status" : "OK"
+				}
+			]
+		},
+		{
+			"id" : 5,
+			"name" : "sharepoint_loan_docs",
+			"description" : "Maintain loan documents for a loan in Sharepoint",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			]
+		},
+		{
+			"id" : 6,
+			"name" : "creditCheck_initiate",
+			"description" : "Initiate a credit check for Loan Initiation",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			],
+			"links" : [
+				"Github page",
+				"Another External Link",
+				"Sensu"
+			]
+		},
+		{
+			"id" : 7,
+			"name" : "creditCheck_experian",
+			"description" : "Initiate a credit check with Experian",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			]
+		},
+		{
+			"id" : 8,
+			"name" : "creditCheck_transunion",
+			"description" : "Initiate a credit check with Trans Union",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			],
+			"links" : [
+				"Github page",
+				"Another External Link",
+				"Sensu"
+			]
+		},
+		{
+			"id" : 9,
+			"name" : "creditCheck_privacyG",
+			"description" : "Initiate a credit check with Privacy G",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			]
+		},
+		{
+			"id" : 10,
+			"name" : "underwriting_initiate",
+			"description" : "Initiate a underwriting request",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			]
+		},
+		{
+			"id" : 11,
+			"name" : "fannyMae_105reg_publish",
+			"description" : "Publish loan information with Fanny Mae in accordance with Regulation 105",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			],
+			"links" : [
+				"Github page",
+				"Another External Link",
+				"Sensu"
+			]
+		},		{
+			"id" : 12,
+			"name" : "IRS1098",
+			"description" : "Publish loan interest to IRS",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			]
+		},
+		{
+			"id" : 13,
+			"name" : "tripoli_loanapproval_initate",
+			"description" : "Submit loan details to tripoli system for loan approval",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			]
+		},
+		{
+			"id" : 14,
+			"name" : "tripoli_loanapproval_state",
+			"description" : "Loan approval state from Tivoli application",
+			"type" : "api",
+			"status" : "OK",
+			"attributes" : [
+				{
+					"id" : "cpu",
+					"name" : "CPU",
+					"value" : "24%",
+					"status" : "OK"
+				},
+				{
+					"id" : "memory",
+					"name" : "Memory",
+					"value" : "72%",
+					"status" : "OK"
+				}
+			],
+			"links" : [
+				"Github page",
+				"Another External Link",
+				"Sensu"
+			]
+		}
+	]
+}

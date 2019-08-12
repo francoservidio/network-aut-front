@@ -1,0 +1,35 @@
+<md-dialog ng-style="{'min-height': '325px', 'width': '700px'}">
+
+    <md-toolbar style="background-color: #7B1FA2">
+        <div class="md-toolbar-tools">
+            <h2>{{ (viewonly == true ? "Evolucion" : "Agregar Evolución")}}</h2>
+            <span flex></span>
+            <md-button ng-click="closeDialog()" class="md-icon-button">
+                <md-icon aria-label="Close" class="material-icons">close</md-icon>
+                <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <div style="padding-top: 15px" layout="column" layout-padding>
+
+            <md-input-container class="md-block">
+                <label>Detalles de evolucion</label>
+                <textarea required ng-disabled="viewonly" ng-model="evolucion.detalle" rows="5" md-maxlength="2000" md-select-on-focus></textarea>
+            </md-input-container>
+
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row" ng-if="!viewonly">
+        <span flex></span>
+        <md-button Xclass="md-primary" ng-disabled="canSave()" ng-click="saveEvolucion()" ng-disabled="false"
+                   style="margin-right:10px;">
+            Añadir
+        </md-button>
+    </md-dialog-actions>
+
+
+</md-dialog>

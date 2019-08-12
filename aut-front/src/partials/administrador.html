@@ -1,0 +1,11 @@
+<main-toolbar>
+    <md-button ng-click="goBack()" class="md-icon-button">
+        <md-icon aria-label="arrow back" class="material-icons">arrow_back</md-icon>
+        <md-tooltip md-direction="bottom">Go back</md-tooltip>
+    </md-button>
+
+    <h1 flex style="text-align: center">Administrador</h1>
+
+    <md-button ng-disabled="!allowedToSave" ng-click="updatePaciente()" class="md-raised md-primary">Guardar Cambios</md-button>
+
+</main-toolbar>

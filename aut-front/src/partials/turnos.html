@@ -1,0 +1,64 @@
+<main-toolbar>
+
+    <md-button ng-click="goBack()" class="md-icon-button">
+        <md-icon aria-label="arrow back" class="material-icons">arrow_back</md-icon>
+        <md-tooltip md-direction="bottom">Go back</md-tooltip>
+    </md-button>
+    <h1 flex style="text-align: center">Turnos</h1>
+
+    <md-button ng-click="imprimirTurnosDelDia()" ng-disabled="turnos.length < 1" class="md-raised md-primary">Imprimir Reporte</md-button>
+</main-toolbar>
+
+<md-card>
+    <md-card-title>
+        <h3>Seleccione el día del turno</h3>
+    </md-card-title>
+
+    <md-card-content>
+
+        <md-button class="md-fab md-fab-bottom-right md-primary" style="background-color: deepskyblue"
+                   ng-click="createTurno($event)" aria-label="Add Component">
+            <md-icon class="material-icons">add</md-icon>
+            <md-tooltip md-direction="left">Crear Turno</md-tooltip>
+        </md-button>
+
+
+        <md-datepicker ng-change="reloadTurnos()" ng-model="turnoDate" md-date-filter="onlyWeekdays" md-placeholder="Ingrese Fecha"></md-datepicker>
+
+        <div layout="row">
+
+            <section ng-if="turnos.length > 0" id="timeline" class="timeline-outer">
+
+                <div class="container" id="content">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <ul class="timeline">
+                                <li ng-repeat="turno in turnos"
+                                    class="event" data-date="{{turno.horario | date:'HH:mm'}}" >
+                                    <div layout="row">
+                                        <div layout="column" flex>
+                                            <h3>{{turno.cliente.nombre + " " + turno.cliente.apellido}}</h3>
+                                            <p>{{turno.tipoDeTurno}}</p>
+                                            <p>Duración: {{turno.duracion}} minutos</p>
+                                            <p>{{turno.descripcion}}</p>
+                                        </div>
+                                        <md-button ng-click="cancelarTurno($event, turno.id)" aria-label="cancel">
+                                            <md-tooltip md-direction="bottom">Cancelar Turno</md-tooltip>
+                                            <md-icon class="material-icons">cancel</md-icon>
+                                        </md-button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <h1 flex ng-if="turnos.length == 0" style="text-align: center">No hay turnos asignados en esta fecha.</h1>
+        </div>
+
+
+    </md-card-content>
+
+</md-card>
+

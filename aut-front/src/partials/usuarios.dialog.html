@@ -1,0 +1,52 @@
+<md-dialog ng-style="{'min-height': '325px', 'width': '700px'}">
+
+    <md-toolbar style="background-color: #7B1FA2">
+        <div class="md-toolbar-tools">
+            <h2>{{ (usuario.$$alreadyExists == true ? "Modificar Usuario" : "Agregar Usuario")}}</h2>
+            <span flex></span>
+            <md-button ng-click="closeDialog()" class="md-icon-button">
+                <md-icon aria-label="Close" class="material-icons">close</md-icon>
+                <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <div style="padding-top: 15px" layout="column" layout-padding>
+
+            <md-input-container class="md-icon-float md-icon-right md-block" flex>
+                <label>Nombre de Usuario</label>
+                <input required ng-model="usuario.nombreUsuario">
+            </md-input-container>
+
+            <md-input-container class="md-icon-float md-icon-right md-block" flex>
+                <label>Email</label>
+                <input required type="email" ng-model="usuario.email">
+            </md-input-container>
+
+            <md-switch style="padding-left: 10px" ng-model="usuario.esAdministrativo" aria-label="Switch 1">
+                Es Administrativo
+            </md-switch>
+
+            <md-switch style="padding-left: 10px" ng-model="usuario.esOftalmologo" aria-label="Switch 1">
+                Es Oftalmologo
+            </md-switch>
+
+            <md-switch style="padding-left: 10px" ng-model="usuario.esAdministrador" aria-label="Switch 1">
+                Es Administrador
+            </md-switch>
+
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button Xclass="md-primary" ng-disabled="canSave()" ng-click="saveUsuario()"
+                   style="margin-right:10px;">
+            Guardar
+        </md-button>
+    </md-dialog-actions>
+
+
+</md-dialog>

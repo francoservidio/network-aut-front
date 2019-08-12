@@ -1,0 +1,42 @@
+[{
+"id": 32310,
+"nombre": "dispositivo 1",
+"ip": "10.10.10.10",
+"fecha": "16:50"
+},{
+"id": 32311,
+"nombre": "dispositivo 2",
+"ip": "10.10.10.11",
+"fecha": "16:50"
+},{
+"id": 32312,
+"nombre": "dispositivo 3",
+"ip": "10.10.10.12",
+"fecha": "16:50"
+},{
+"id": 32313,
+"nombre": "dispositivo 4",
+"ip": "10.10.10.13",
+"fecha": "16:50"
+},{
+"id": 32314,
+"nombre": "dispositivo 5",
+"ip": "10.10.10.14",
+"fecha": "16:50"
+},{
+"id": 32315,
+"nombre": "dispositivo 6",
+"ip": "10.10.10.15",
+"fecha": "16:50"
+},{
+"id": 32316,
+"nombre": "dispositivo 7",
+"ip": "10.10.10.16",
+"fecha": "16:50"
+},{
+"id": 32317,
+"nombre": "dispositivo 8",
+"ip": "10.10.10.17",
+"fecha": "16:50"
+}
+]

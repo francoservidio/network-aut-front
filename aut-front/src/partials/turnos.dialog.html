@@ -1,0 +1,70 @@
+<md-dialog ng-style="{'min-height': '325px', 'width': '700px'}">
+
+    <md-toolbar style="background-color: #7B1FA2">
+        <div class="md-toolbar-tools">
+            <h2>Añadir turno</h2>
+            <span flex></span>
+            <md-button ng-click="closeDialog()" class="md-icon-button">
+                <md-icon aria-label="Close" class="material-icons">close</md-icon>
+                <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <div class="md-padding" layout="column">
+
+            <md-autocomplete flex
+                             id="selectCliente" required
+                             md-selected-item="selectedCliente"
+                             md-search-text="clienteSearch"
+                             md-selected-item-change="selectedClienteChange(cliente)"
+                             md-items="cliente in querySearch(clienteSearch)"
+                             md-item-text="cliente.$$searchField"
+                             md-floating-label="Seleccione un cliente">
+                <md-item-template>
+                    <span md-highlight-text="clienteSearch" md-highlight-flags="gi">{{cliente.$$searchField}}</span>
+                </md-item-template>
+                <md-not-found>
+                    No users found
+                </md-not-found>
+            </md-autocomplete>
+
+            <md-input-container flex>
+                <label>Tipo de turno</label>
+                <md-select id="obraSocial" required
+                           ng-model="turno.tipoDeTurno"
+                           placeholder="Tipo de Turno" flex>
+                    <md-option ng-repeat="o in tiposDeTurno track by o.key" ng-value="o.key">
+                        {{o.key}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container  style="margin-top: 20px">
+                <label>Descripcion</label>
+                <input required ng-model="turno.descripcion">
+            </md-input-container>
+
+            <md-input-container class="md-icon-float md-icon-right md-block" flex>
+                <label>Duracion (minutos)</label>
+                <input required ng-model="turno.duracion" type="number">
+            </md-input-container>
+
+            <md-time-picker required ng-model="turno.horario" message="message" read-only="readonly" mandatory="required" no-meridiem no-auto-switch></md-time-picker>
+
+
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-disabled="canSave()" ng-click="createTurno()"
+                   style="margin-right:10px;">
+            Añadir
+        </md-button>
+    </md-dialog-actions>
+
+
+</md-dialog>

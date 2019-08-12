@@ -1,0 +1,40 @@
+<md-dialog Xng-style="{'min-height': '325px', 'width': '700px'}">
+
+    <md-toolbar style="background-color: #7B1FA2">
+        <div class="md-toolbar-tools">
+            <h2>Reporte: estudios del mes</h2>
+            <span flex></span>
+            <md-button ng-click="closeDialog()" class="md-icon-button">
+                <md-icon aria-label="Close" class="material-icons">close</md-icon>
+                <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <div class="md-padding" layout="column">
+
+            <md-input-container flex>
+                <label>Elegir un mes para el reporte</label>
+                <md-select id="obraSocial"
+                           ng-model="mes"
+                           placeholder="Tipo de Turno" flex>
+                    <md-option value="mesencurso">Mes anterior</md-option>
+                    <md-option value="mesanterior">Mes en curso</md-option>
+                </md-select>
+            </md-input-container>
+
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button Xclass="md-primary" ng-click="createTurno()"
+                   style="margin-right:10px;">
+            Imprimir
+        </md-button>
+    </md-dialog-actions>
+
+
+</md-dialog>

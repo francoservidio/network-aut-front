@@ -1,0 +1,71 @@
+<md-dialog ng-style="{'min-height': '325px', 'width': '700px'}">
+
+    <md-toolbar style="background-color: #7B1FA2">
+        <div class="md-toolbar-tools">
+            <h2>Añadir Cliente</h2>
+            <span flex></span>
+            <md-button ng-click="closeDialog()" class="md-icon-button">
+                <md-icon aria-label="Close" class="material-icons">close</md-icon>
+                <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <div class="md-padding" layout="column">
+
+            <md-input-container>
+                <label>Nombre</label>
+                <input type="text" required ng-model="cliente.nombre">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Apellido</label>
+                <input type="text" required ng-model="cliente.apellido">
+            </md-input-container>
+
+            <md-input-container>
+                <label>DNI o Pasaporte</label>
+                <input required ng-model="cliente.dni">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Direccion</label>
+                <input required ng-model="cliente.direccion">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Email</label>
+                <input type="email" required ng-model="cliente.email">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Codigo Postal</label>
+                <input required ng-model="cliente.codigoPostal">
+            </md-input-container>
+
+            <md-input-container flex>
+                <label>Obra Social</label>
+                <md-select id="obraSocial" required
+                           ng-model="cliente.obraSocial"
+                           placeholder="Obra Social" flex>
+                    <md-option ng-repeat="o in obrasSociales track by o.key" ng-value="o.key">
+                        {{o.value}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="saveCliente()" ng-disabled="canSave()"
+                   style="margin-right:10px;">
+            Añadir
+        </md-button>
+    </md-dialog-actions>
+
+
+</md-dialog>

@@ -1,0 +1,28 @@
+<div layout="row">
+
+    <section ng-if="turnos.length > 0" id="timeline" class="timeline-outer">
+
+        <h1>Lista de turnos del dia: {{dia}}</h1>
+
+        <div class="container" id="content">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <ul class="timeline">
+                        <li ng-repeat="turno in turnos"
+                            class="event" data-date="{{turno.horario | date:'HH:mm'}}" >
+                            <div layout="row">
+                                <div layout="column" flex>
+                                    <h3>{{turno.cliente.nombre + " " + turno.cliente.apellido}}</h3>
+                                    <p>{{turno.tipoDeTurno}}</p>
+                                    <p>Duración: {{turno.duracion}} minutos</p>
+                                    <p>{{turno.descripcion}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
