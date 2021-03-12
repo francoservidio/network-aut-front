@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "angular-material-time-picker": "^1.0.8",
-    "jspdf": "^1.5.3"
+    "jspdf": "^2.3.1"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
